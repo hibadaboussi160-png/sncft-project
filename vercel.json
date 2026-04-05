@@ -3,8 +3,10 @@
     "builds": [
         {
             "src": "public/index.php",
-            "use": "vercel-php@0.6.0",
-            "config": { "maxDuration": 60 }
+            "use": "@vercel/php",
+            "config": { 
+                "installCommand": "composer install --no-dev --no-scripts --ignore-platform-reqs" 
+            }
         }
     ],
     "routes": [
@@ -15,6 +17,7 @@
     ],
     "env": {
         "APP_ENV": "production",
+        "APP_DEBUG": "true",
         "VERCEL_PHP_VERSION": "8.2"
     }
 }
