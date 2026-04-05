@@ -1,17 +1,13 @@
 {
-    "version": 2,
-    "framework": null,
-    "installCommand": "composer install",
-    "builds": [
-        {
-            "src": "public/index.php",
-            "use": "@vercel/php"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/public/index.php"
-        }
-    ]
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.5"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/public/index.php"
+    }
+  ]
 }
