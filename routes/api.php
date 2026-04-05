@@ -28,7 +28,7 @@ Route::get('/api/trains', function () {
 
     foreach ($rows as $i => $row) {
         if ($i == 0) continue; // تجاهل العناوين
-        $cols = $row->getElementsByTagName('td');
+       $cols = $row->childNodes;
         if ($cols->length >= 5) {
             $arrivee   = trim($cols->item(0)->textContent);
             $prevision = trim($cols->item(1)->textContent);
